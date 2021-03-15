@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Database Layout:
+
+![Database Layout](/schema_animals.png)
