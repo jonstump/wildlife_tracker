@@ -6,4 +6,18 @@
                       :data => {:confirm => "You sure?",
                                   :method => "delete"} %></p>
 
+<% if @animal.sightings.any? %>
+  <ul>
+
+  <% @animal.sightings.each do |sighting|%>
+    <li><%= link_to sighting.date, animal_sighting_path(@animal, sighting) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no sightings yet.</p>
+<% end %>
+
+
+<p><%= link_to "Create new sighting", new_animal_sighting_path(@animal) %></p>
+
 <p><%= link_to "Return to animals", animals_path %></p>

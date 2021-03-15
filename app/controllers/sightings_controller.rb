@@ -9,7 +9,7 @@ class SightingsController < ApplicationController
     @animal = Animal.find(params[:animal_id])
     @sighting = @animal.sightings.new(sighting_params)
     if @sighting.save
-      redirect_to :animal_path(@animal)
+      redirect_to animal_path(@animal)
     else
       render :new
     end
@@ -33,7 +33,7 @@ class SightingsController < ApplicationController
       redirect_to animal_path(@sighting.animal)
     else
       @animal = Animal.find(params[:animal_id])
-      render: edit
+      render :edit
     end
   end
 
